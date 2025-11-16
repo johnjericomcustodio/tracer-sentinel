@@ -94,6 +94,8 @@ Points
 ## References
 
 - [README template](https://github.com/othneildrew/Best-README-Template/blob/main/README.md)
-- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+- [Photopea](https://www.photopea.com/)
+- [Flaticon](https://www.flaticon.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
