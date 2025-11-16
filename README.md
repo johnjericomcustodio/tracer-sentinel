@@ -61,7 +61,7 @@ Points
 5. Sentinel digests both the input and output files to verify correctness and compare expected vs. actual visited points.
 6. Sentinel determines whether TraceR successfully visited all required points and produces a PASS/FAIL result in *test_results.txt*, along with a plotted image showing the rectangle and all points.
 
-<img width="1562" height="756" alt="image" src="https://github.com/user-attachments/assets/994e1a29-27eb-4b37-aea3-113b09f20725" />
+<img width="1562" height="756" alt="image" src="image/workarea_points.png" />
 
 ## Getting Started
 
@@ -77,7 +77,7 @@ Points
 
 ## CICD
 
-<img width="1825" height="579" alt="image" src="https://github.com/user-attachments/assets/fb2f6bf4-e453-411d-95f5-92b96cae6c76" />
+<img width="1825" height="579" alt="image" src="image/tracer_sentinel_cicdarch.png" />
 
 - Integrating this to a CICD pipeline, a dedicated robot arm TraceR will be used as the automation agent.
 - For any system update available, TraceR will then be triggered to upgrade/downgrade followed by the execution of the validation program Sentinel.
