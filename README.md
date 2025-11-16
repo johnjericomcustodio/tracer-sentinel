@@ -94,4 +94,7 @@ Points
 
 ## References
 
+- [README template](https://github.com/othneildrew/Best-README-Template/blob/main/README.md)
+- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
