@@ -6,12 +6,7 @@
   <a href="https://github.com/johnjericomcustodio/tracer-sentinel/">
     <img src="images/logo_sentinel.png" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">The Sentinel - Automated Test Framework for Robot Arm TraceR</h3>
-
-  <p align="center">
-    An automated testing framework for the TraceR robot arm using pytest and Docker.
-  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
