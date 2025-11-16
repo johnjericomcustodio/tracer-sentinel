@@ -43,11 +43,11 @@
 
 ```bash
 Rectangle
-(6.78, 0.39), (10.42, 0.39), (10.42, 5.18), (6.78, 5.18)
+(11.01, 4.69), (6.84, 8.1), (5.41, 6.35), (9.59, 2.94)
 Points
-(7.55, 2.07)
-(6.78, 3.64)
-(7.06, 2.63)
+(8.34, 6.61)
+(7.66, 5.6)
+(5.69, 6.13)
 ```
 2. TraceR takes the expected visit points from the input file listed under keyword *Points*
 3. TraceR visits points one by one only within the work area defined by the coordinates under the keyword *Rectangle*.
@@ -60,8 +60,8 @@ Points
 ```
 5. Sentinel digests both the input and output files to verify correctness and compare expected vs. actual visited points.
 6. Sentinel determines whether TraceR successfully visited all required points and produces a PASS/FAIL result in *test_results.txt*, along with a plotted image showing the rectangle and all points.
-   
-<img width="1558" height="733" alt="image" src="https://github.com/user-attachments/assets/9bf91398-66ec-4656-aa60-dafa92f93013" />
+
+<img width="1562" height="756" alt="image" src="https://github.com/user-attachments/assets/994e1a29-27eb-4b37-aea3-113b09f20725" />
 
 ## Getting Started
 
