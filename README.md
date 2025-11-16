@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/johnjericomcustodio/tracer-sentinel/">
-    <img src="images/logo_sentinel.png" alt="Logo" width="80" height="80">
+    <img src="images/logo_sentinel.png" alt="Logo" width="800" height="800">
   </a>
   <h3 align="center">The Sentinel - Automated Test Framework for Robot Arm TraceR</h3>
 </div>
