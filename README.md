@@ -6,7 +6,7 @@
   <a href="https://github.com/johnjericomcustodio/tracer-sentinel/">
     <img src="images/logo_sentinel.png" alt="Logo" width="800" height="800">
   </a>
-  <h3 align="center">The Sentinel - Automated Test Framework for Robot Arm TraceR</h3>
+  <h3 align="center">Sentinel - The Automated Test Framework for Robot Arm TraceR</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -94,6 +94,8 @@ Points
 ## References
 
 - [README template](https://github.com/othneildrew/Best-README-Template/blob/main/README.md)
-- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+- [Photopea](https://www.photopea.com/)
+- [Flaticon](https://www.flaticon.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
