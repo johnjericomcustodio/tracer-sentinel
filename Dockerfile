@@ -12,8 +12,9 @@ COPY src/__init__.py /app/src/
 COPY src/ /app/src/
 COPY tests/ /app/tests/
 COPY pytest.ini /app/
-COPY .flake8 /app/
-COPY .pylintrc /app/
+COPY qa/codeqc.sh /app/qa/
+COPY qa/.flake8 /app/
+COPY qa/.pylintrc /app/
 
 # the data files (input/output) are mounted as a volume via docker yml
 

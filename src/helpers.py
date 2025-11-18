@@ -1,4 +1,4 @@
-"""Helper functions for reading input/output files and verifying system behavior."""
+"""Helper functions for reading files and verifying system behavior."""
 
 import os
 import re
@@ -9,7 +9,7 @@ from typing import List, Tuple
 def parse_points(data: str) -> List[Tuple[float, float]]:
     """Parses coordinate points from a given string data."""
 
-    # Regex to find valid (x, y), covers negatives and decimals
+    # regex to find valid (x, y), covers negatives and decimals
     point_regex = re.compile(
         r"\(\s*(?P<x>[+\-]?\d+(?:\.\d+)?)\s*,\s*(?P<y>[+\-]?\d+(?:\.\d+)?)\s*\)"
     )
@@ -18,16 +18,16 @@ def parse_points(data: str) -> List[Tuple[float, float]]:
     for line in data.strip().split("\n"):
         line = line.strip()
 
-        # Skip empty lines only
+        # skip empty lines only
         if not line:
             continue
 
-        # Find all valid patterns based on regex
+        # find all valid patterns based on regex
         matches = point_regex.finditer(line)
         match_list = list(matches)
         assert len(match_list) > 0, f"Invalid coordinate format: '{line}'"
 
-        # Convert each match to float tuple
+        # convert each match to float tuple
         for match in match_list:
             try:
                 x = float(match.group("x"))
@@ -53,7 +53,7 @@ def read_input(
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Extract workarea_points (between Rectangle and Points)
+    # extract workarea_points (between Rectangle and Points)
     rect_match = re.search(r"Rectangle\s*([\s\S]*?)(?=Points|\Z)", content)
     assert (
         rect_match is not None
@@ -68,8 +68,8 @@ def read_input(
         f"Found {len(workarea_points)} points, expected 4."
     )
 
-    # Extract expected_points (after Points)
-    # Note that if the Points keyword is not found,
+    # extract expected_points (after Points)
+    # note: if the Points keyword is not found,
     # the coordinates will be considered part of the Rectangle section
     # which then fails the quadrilateral check above
     points_match = re.search(r"Points\s*([\s\S]*)", content)
@@ -92,7 +92,7 @@ def read_output(filepath: Path) -> List[Tuple[float, float]]:
         print(f"Error: Output file '{filepath}' not found.")
         return []
 
-    # No keywords, only points and potential errors/invalid entries
+    # no keywords, only points and potential errors/invalid entries
     return parse_points(content)
 
 
@@ -120,7 +120,7 @@ def verify_system_behavior(
     if actual_points != expected_points:
         test_status = "FAIL"
 
-    # TO INSERT: Insert logic here to know if the points are within the rectangle
+    # TO INSERT: Insert logic here to know if the points are within the rectangle inclusive
     print(workarea)
 
     return test_status

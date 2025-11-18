@@ -38,7 +38,7 @@ fi
 
 # check code quality
 if [ "$codeqc" = true ]; then
-  docker compose run --remove-orphans test_runner bash src/codeqc.sh
+  docker compose run --remove-orphans test_runner bash qa/codeqc.sh
 fi
 
 # run pytest (by default)

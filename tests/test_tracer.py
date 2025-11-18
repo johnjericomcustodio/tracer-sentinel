@@ -1,4 +1,4 @@
-"""Main test program for Sentinel Tracer system verification scenarios."""
+"""Main test program for Sentinel"""
 
 from pathlib import Path
 
