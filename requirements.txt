@@ -1,0 +1,11 @@
+# test framework
+pytest
+pytest-cov
+
+# code quality
+flake8
+black
+isort
+mypy
+pylint
+bandit

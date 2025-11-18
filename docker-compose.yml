@@ -1,0 +1,10 @@
+services:
+  test_runner:
+    container_name: tracer_sentinel
+    build: .
+    # mount the data directory as a volume for reading input files and writing output
+    volumes:
+      - ./data:/app/data
+    
+    # set default command  to execute pytest
+    command: pytest tests/
