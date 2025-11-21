@@ -68,7 +68,8 @@ Points
 (16.16, 11.9)
 ```
 5. Sentinel digests both the input and output files to verify correctness and compare expected vs. actual visited points.
-6. Sentinel determines whether TraceR successfully visited all required points and produces a PASS/FAIL result in *test_results.txt*, along with a plotted image showing the rectangle and all points.
+6. Sentinel determines whether TraceR successfully visited all required points in the exact sequence.
+7. Sentinel produces a PASS/FAIL result in *test_results.txt*, along with a plotted image showing the rectangle and all points.
 
 <a href="https://github.com/johnjericomcustodio/tracer-sentinel/">
   <img src="images/workarea_points.png" width="1562" height="756">
@@ -129,8 +130,38 @@ example:
 
 Notes
 * pytest adds ```<test scenario identifier>``` to its -k argument
-* ```<test scenario identifier>``` is an identifier based on the folders listed in data/scenarios
-* Results are stored individually to their corresponding folders in data/scenarios. These include the timestamped test_results.txt as well as the plot png file to visualize the coordinates.
+* ```<test scenario identifier>``` is an identifier based on the folders listed in [data/scenarios](data/scenarios)
+* Results are stored individually to their corresponding folders in [data/scenarios](data/scenarios). These include the timestamped test_results.txt as well as the plot png file to visualize the coordinates.
+
+### Test Scenarios
+
+Test scenarios are found in [data/scenarios](data/scenarios). To add tests:
+1. Go to [data/scenarios](data/scenarios)
+2. Create a new directory with folder name prefixed with either pass_ or fail_. This is used to indicate if the test is expected to PASS or FAIL.
+3. Each folder contains 2 files required as input to Sentinel:
+- system_input_file.txt
+- system_output_file.txt
+4. After test execution, a test_results.txt is generated in the corresponding test scenario. Sample format is shown below:
+
+```bash
+======================================================================
+OVERALL TEST STATUS: PASS
+======================================================================
+
+POINT-BY-POINT COMPARISON:
+----------------------------------------------------------------------
+Expected Points      Actual Points        Assessment
+-------------------------------------------------------
+(1.41, 6.38)         (1.41, 6.38)         PASS      
+(2.49, 9.08)         (2.49, 9.08)         PASS      
+(0.94, 7.06)         (0.94, 7.06)         PASS      
+(1.9, 8.41)          (1.9, 8.41)          PASS      
+(2.3, 5.65)          (2.3, 5.65)          PASS      
+(1.29, 3.91)         (1.29, 3.91)         PASS      
+```
+
+5. Additionally, if all parsed data are valid, a visualization (png file) is generated showing the work area boundary along with the expected and actual coordinate points.
+
 
 ### Cleanup
 
