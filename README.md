@@ -91,6 +91,7 @@ git clone git@github.com:johnjericomcustodio/tracer-sentinel.git
 ```bash
 cd tracer-sentinel
 git pull origin main
+chmod +x tests/*sh
 ```
 
 ### Installation
