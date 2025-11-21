@@ -137,7 +137,9 @@ Notes
 
 ### Test Scenarios
 
-Test scenarios are found in [data/scenarios](data/scenarios). To add tests:
+Test scenarios are found in [data/scenarios](data/scenarios). A quick summary can be found at [data/scenarios/scenarios.txt](data/scenarios/scenarios.txt).
+
+To add tests:
 1. Go to [data/scenarios](data/scenarios)
 2. Create a new directory with folder name prefixed with either pass_ or fail_. This is used to indicate if the test is expected to PASS or FAIL.
 3. Each folder contains 2 files required as input to Sentinel:

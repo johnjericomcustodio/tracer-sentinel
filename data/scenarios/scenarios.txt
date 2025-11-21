@@ -1,0 +1,145 @@
+TEST SCENARIOS SUMMARY
+======================
+This document summarizes all test cases covered in the tracer-sentinel system.
+
+PASSING TEST CASES (2)
+----------------------
+
+1. pass_points_match_inside_workarea
+   Description: All expected points match actual points and are located inside the work area
+   Input: Rectangle with 4 coordinates, 6 points all inside the rectangle
+   Expected: All points should be detected correctly within the work area boundaries
+   Status: PASS
+
+2. pass_points_match_on_boundary
+   Description: Points match and some are located on the boundary of the work area
+   Input: Rectangle with 4 coordinates (with extra whitespace), 8 points on edges/corners
+   Expected: Boundary points should be correctly detected and validated
+   Status: PASS
+
+
+FAILING TEST CASES - INPUT VALIDATION (9)
+------------------------------------------
+
+3. fail_incomplete_workarea
+   Description: Rectangle definition is incomplete (missing coordinates)
+   Input: Only 1 coordinate provided for rectangle instead of 4
+   Expected: System should fail validation due to incomplete work area definition
+   Status: FAIL
+
+4. fail_invalid_coordinates_actual
+   Description: Actual points output file contains invalid coordinate format
+   Input: Valid rectangle and expected points, invalid format in actual output
+   Expected: System should fail validation due to malformed coordinates
+   Status: FAIL
+
+5. fail_invalid_coordinates_expected
+   Description: Expected points contain invalid coordinate format
+   Input: Valid rectangle, expected points with malformed coordinate (missing comma)
+   Example: (1.9 8.41) instead of (1.9, 8.41)
+   Expected: System should fail validation due to malformed expected coordinates
+   Status: FAIL
+
+6. fail_invalid_coordinates_rectangle
+   Description: Rectangle coordinates are malformed
+   Input: Rectangle coordinate with incomplete format
+   Example: (0.79, 2.51 instead of (0.79, 2.51)
+   Expected: System should fail validation due to invalid rectangle definition
+   Status: FAIL
+
+7. fail_invalid_keyword_points
+   Description: "Points:" keyword is misspelled
+   Input: "Puints:" instead of "Points:"
+   Expected: System should fail to parse due to incorrect keyword
+   Status: FAIL
+
+8. fail_invalid_keyword_rectangle
+   Description: "Rectangle:" keyword is misspelled
+   Input: "Rectangol:" instead of "Rectangle:"
+   Expected: System should fail to parse due to incorrect keyword
+   Status: FAIL
+
+9. fail_missing_keyword_points
+   Description: "Points:" keyword is completely missing from input
+   Input: Rectangle definition followed directly by coordinates without "Points:" label
+   Expected: System should fail to parse due to missing section keyword
+   Status: FAIL
+
+10. fail_missing_keyword_rectangle
+    Description: "Rectangle:" keyword is completely missing from input
+    Input: Coordinates listed without "Rectangle:" label
+    Expected: System should fail to parse due to missing section keyword
+    Status: FAIL
+
+11. fail_no_point_rectangle
+    Description: No rectangle coordinates provided after "Rectangle:" keyword
+    Input: "Rectangle:" followed immediately by "Points:" section
+    Expected: System should fail validation due to empty rectangle definition
+    Status: FAIL
+
+
+FAILING TEST CASES - DATA VALIDATION (4)
+-----------------------------------------
+
+12. fail_no_point_expected
+    Description: No expected points provided in input file
+    Input: Valid rectangle but empty "Points:" section
+    Expected: System should fail validation due to missing expected points
+    Status: FAIL
+
+13. fail_no_points_actual
+    Description: Actual output file contains valid expected points but test compares against missing actual data
+    Input: Valid rectangle and expected points
+    Expected: System should fail when no actual output points are available for comparison
+    Status: FAIL
+
+14. fail_more_actual_than_expected
+    Description: System detected more points than expected
+    Input: 6 expected points, 8 actual points detected
+    Expected: System should fail due to count mismatch (extra points detected)
+    Status: FAIL
+
+15. fail_more_expected_than_actual
+    Description: System detected fewer points than expected
+    Input: 8 expected points, 6 actual points detected
+    Expected: System should fail due to count mismatch (missing points)
+    Status: FAIL
+
+
+FAILING TEST CASES - POINT MATCHING (2)
+----------------------------------------
+
+16. fail_points_mismatch_actual_inside_workarea
+    Description: Actual points are inside work area but don't match expected coordinates
+    Input: 6 expected points, 6 actual points with different coordinates (all inside)
+    Expected: System should fail due to coordinate mismatch despite correct count
+    Status: FAIL
+
+17. fail_points_mismatch_actual_outside_workarea
+    Description: Actual points are outside the work area boundaries
+    Input: 6 expected points inside work area, 6 actual points with coordinates outside
+    Expected: System should fail due to points being outside work area and not matching expected
+    Status: FAIL
+
+TEST COVERAGE AREAS
+-------------------
+✓ Valid input with points inside work area
+✓ Valid input with points on boundary
+✓ Incomplete rectangle definition
+✓ Invalid coordinate formats (rectangle, expected points, actual points)
+✓ Misspelled keywords (Rectangle, Points)
+✓ Missing keywords (Rectangle, Points)
+✓ Empty rectangle definition
+✓ Empty expected points
+✓ Missing actual points
+✓ Count mismatches (more/fewer actual than expected)
+✓ Coordinate mismatches (inside work area)
+✓ Coordinates outside work area
+
+NOTES
+-----
+- The system validates input format, coordinate syntax, and keyword presence
+- Work area is defined by a rectangle with 4 corner coordinates
+- Points must match exactly in both count and sequence
+- Boundary points are considered valid (inclusive boundaries)
+- The system performs comprehensive validation before point comparison
