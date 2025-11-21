@@ -30,6 +30,7 @@
     <li><a href="#usage">Usage</a></li>
       <ul>
         <li><a href="#test-execution">Test Execution</a></li>
+        <li><a href="#test-scenarios">Test Scenarios</a></li>
         <li><a href="#cleanup">Cleanup</a></li>
       </ul>
     <li><a href="#limitations">Limitations</a></li>
