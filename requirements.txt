@@ -2,6 +2,9 @@
 pytest
 pytest-cov
 
+# visualization
+matplotlib
+
 # code quality
 flake8
 black
