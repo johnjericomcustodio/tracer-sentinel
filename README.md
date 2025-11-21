@@ -171,6 +171,7 @@ To cleanup test result files from previous runs:
 ```bash
 ./tests/run.sh --cleanup
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Limitations
 
