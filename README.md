@@ -201,5 +201,9 @@ To cleanup test result files from previous runs:
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 - [Photopea](https://www.photopea.com/)
 - [Flaticon](https://www.flaticon.com/)
+- Is point within the rectangle?
+  - https://martin-thoma.com/how-to-check-if-a-point-is-inside-a-rectangle/
+  - https://www.geeksforgeeks.org/dsa/check-whether-given-point-lies-inside-rectangle-not/
+- [Matplotlib / pyplot](https://www.geeksforgeeks.org/python/matplotlib-pyplot-legend-in-python/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
